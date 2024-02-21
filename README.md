@@ -13,7 +13,7 @@ Abstract: *Out-of-distribution (OOD) detection aims at identifying samples from 
 
 The project is based on MMClassification. MMClassification is an open source image classification toolbox based on PyTorch. It is a part of the [OpenMMLab](https://openmmlab.com/) project.
 
-As MMClassification is upgraded to MMPreTrain, so we follow MMPreTrain to install the environment:
+Below are quick steps for installation:
 
 ```shell
 conda create -n open-mmlab python=3.8 pytorch==1.10 torchvision==0.11.2 cudatoolkit=11.3 -c pytorch -y

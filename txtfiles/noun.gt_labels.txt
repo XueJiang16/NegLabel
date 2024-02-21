@@ -1,0 +1,247 @@
+Agave lechuguilla
+Pennantia corymbosa
+Sapindus saponaria
+Prunus serotina
+Chondracanthus exasperatus
+Sambucus racemosa
+Polypodium vulgare
+Rhus integrifolia
+Woodwardia areolata
+Epifagus virginiana
+Rubus idaeus
+Croton setiger
+Mammillaria dioica
+Opuntia littoralis
+Cercis canadensis
+Psidium guajava
+Asclepias exaltata
+Linaria purpurea
+Ferocactus wislizeni
+Briza minor
+Arbutus menziesii
+Corylus americana
+Pleopeltis polypodioides
+Myoporum laetum
+Persea americana
+Avena fatua
+Blechnum discolor
+Physocarpus capitatus
+Ungnadia speciosa
+Cercocarpus betuloides
+Arisaema dracontium
+Juniperus californica
+Euphorbia prostrata
+Leptopteris hymenophylloides
+Arum italicum
+Raphanus sativus
+Myrsine australis
+Lupinus stiversii
+Pinus echinata
+Geum macrophyllum
+Ripogonum scandens
+Echinocereus triglochidiatus
+Cupressus macrocarpa
+Ulmus crassifolia
+Phormium tenax
+Aptenia cordifolia
+Osmunda claytoniana
+Datura wrightii
+Solanum rostratum
+Viola adunca
+Toxicodendron diversilobum
+Viola sororia
+Uropappus lindleyi
+Veronica chamaedrys
+Adenocaulon bicolor
+Clintonia uniflora
+Cirsium scariosum
+Arum maculatum
+Taraxacum officinale officinale
+Orthilia secunda
+Eryngium yuccifolium
+Diodia virginiana
+Cuscuta gronovii
+Sisyrinchium montanum
+Lotus corniculatus
+Lamium purpureum
+Ranunculus repens
+Hirschfeldia incana
+Phlox divaricata laphamii
+Lilium martagon
+Clarkia purpurea
+Hibiscus moscheutos
+Polanisia dodecandra
+Fallugia paradoxa
+Oenothera rosea
+Proboscidea louisianica
+Packera glabella
+Impatiens parviflora
+Glaucium flavum
+Cirsium andersonii
+Heliopsis helianthoides
+Hesperis matronalis
+Callirhoe pedata
+Crocosmia × crocosmiiflora
+Calochortus albus
+Nuttallanthus canadensis
+Argemone albiflora
+Eriogonum fasciculatum
+Pyrrhopappus pauciflorus
+Zantedeschia aethiopica
+Melilotus officinalis
+Peritoma arborea
+Sisyrinchium bellum
+Lobelia siphilitica
+Sorghastrum nutans
+Typha domingensis
+Rubus laciniatus
+Dichelostemma congestum
+Chimaphila maculata
+Echinocactus texensis
+badlands
+bamboo forest
+bayou
+botanical garden
+canal (natural)
+canal (urban)
+catacomb
+cavern (indoor)
+corn field
+creek
+crevasse
+desert (sand)
+desert (vegetation)
+field (cultivated)
+field (wild)
+fishpond
+forest (broadleaf)
+forest (needleleaf)
+forest path
+forest road
+hayfield
+ice floe
+ice shelf
+iceberg
+islet
+marsh
+ocean
+orchard
+pond
+rainforest
+rice paddy
+river
+rock arch
+sky
+snowfield
+swamp
+tree farm
+trench
+vineyard
+waterfall (block)
+waterfall (fan)
+waterfall (plunge)
+wave
+wheat field
+herb ga1rden
+putting green
+ski slope
+topiary garden
+vegetable garden
+formal garden
+badlands
+bamboo forest
+canal (natural)
+canal (urban)
+corn field
+creek
+crevasse
+desert (sand)
+desert (vegetation)
+desert road
+field (cultivated)
+field (wild)
+field road
+forest (broadleaf)
+forest path
+forest road
+formal garden
+glacier
+grotto
+hayfield
+ice floe
+ice shelf
+iceberg
+igloo
+islet
+japanese garden
+lagoon
+lawn
+marsh
+ocean
+orchard
+pond
+rainforest
+rice paddy
+river
+rock arch
+ski slope
+sky
+snowfield
+swamp
+swimming hole
+topiary garden
+tree farm
+trench
+tundra
+underwater (ocean deep)
+vegetable garden
+waterfall
+wave
+wheat field
+fibrous
+smeared
+spiralled
+bubbly
+lined
+lacelike
+banded
+chequered
+flecked
+zigzagged
+studded
+woven
+cobwebbed
+sprinkled
+polka-dotted
+striped
+interlaced
+gauzy
+crosshatched
+meshed
+matted
+pleated
+swirly
+bumpy
+stratified
+frilly
+dotted
+grid
+veined
+honeycombed
+potholed
+stained
+scaly
+paisley
+marbled
+braided
+porous
+cracked
+pitted
+wrinkled
+blotchy
+crystalline
+waffled
+grooved
+knitted
+perforated
+freckled
