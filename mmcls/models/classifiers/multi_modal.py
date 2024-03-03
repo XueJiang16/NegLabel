@@ -174,19 +174,13 @@ class CLIPScalableClassifier(BaseClassifier):
         if self.cls_mode:
             image_features = image_features.to(torch.float32)
             self.text_features_pos = self.text_features_pos.to(torch.float32)
-            if self.ft_head is None:
-                pos_sim = (100.0 * image_features @ self.text_features_pos.T)
-            else:
-                pos_sim = self.ft_head(image_features)
+            pos_sim = (100.0 * image_features @ self.text_features_pos.T)
             pos_sim = list(pos_sim.softmax(dim=-1).detach().cpu().numpy())            
             return pos_sim
         else:
             image_features = image_features.to(torch.float32)
             self.text_features_pos = self.text_features_pos.to(torch.float32)
             self.text_features_neg = self.text_features_neg.to(torch.float32)
-            if self.ft_head is None:
-                pos_sim = (100.0 * image_features @ self.text_features_pos.T)
-            else:
-                pos_sim = self.ft_head(image_features)
+            pos_sim = (100.0 * image_features @ self.text_features_pos.T)
             neg_sim = (100.0 * image_features @ self.text_features_neg.T)
             return pos_sim, neg_sim
