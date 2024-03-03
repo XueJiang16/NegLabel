@@ -7,6 +7,10 @@ Official PyTorch implementation of the ICLR 2024 paper:
 
 Xue Jiang, Feng Liu, Zhen Fang, Hong Chen, Tongliang Liu, Feng Zheng, Bo Han
 
+<p align="center">
+  <img src="https://github.com/XueJiang16/NegLabel/blob/main/neg_label_fig1.png?raw=true" width=100%/>
+</p>  
+
 Abstract: *In this paper, we propose a novel post hoc OOD detection method, called NegLabel, which takes a vast number of negative labels from extensive corpus databases. We design a novel scheme for the OOD score collaborated with negative labels. Theoretical analysis helps to understand the mechanism of negative labels. Extensive experiments demonstrate that our method NegLabel achieves state-of-the-art performance on various OOD detection benchmarks and generalizes well on multiple VLM architectures. Furthermore, our method NegLabel exhibits remarkable robustness against diverse domain shifts.*
 
 
