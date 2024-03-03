@@ -65,5 +65,5 @@ class ScalableClassifier(BaseModule):
             else:
                 score = full_sim[:, :pos.shape[1]].sum(dim=-1)
 
-        return score, type
+        return score
 
