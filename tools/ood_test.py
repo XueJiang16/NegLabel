@@ -156,30 +156,22 @@ def main():
         if os.environ['LOCAL_RANK'] == '0':
             print()
             print("Processing in-distribution data...")
-        # outputs_id, type_id = single_gpu_test_ood_score(model, data_loader_id, 'ID')
-        outputs_id, type_id = single_gpu_test_ood(model, data_loader_id, 'ID')
+        outputs_id = single_gpu_test_ood(model, data_loader_id, 'ID')
         in_scores = gather_tensors(outputs_id)
         in_scores = np.concatenate(in_scores, axis=0)
-        # np.save('{}/imagenet_trainset.npy'.format(cfg.work_dir), in_scores)
-        type_id = gather_tensors(type_id)
-        type_id = np.concatenate(type_id, axis=0)
         if os.environ['LOCAL_RANK'] == '0':
             print("Average ID score:", in_scores.mean())
-        # assert False
-        # out_scores_list = []
+          
         result_list = []
         for ood_set, ood_name in zip(data_loader_ood, name_ood):
             if os.environ['LOCAL_RANK'] == '0':
                 print()
                 print("Processing out-of-distribution data ({})...".format(ood_name))
-            # outputs_ood, _ = single_gpu_test_ood_score(model, ood_set, ood_name)
-            outputs_ood, _ = single_gpu_test_ood(model, ood_set, ood_name)
+            outputs_ood = single_gpu_test_ood(model, ood_set, ood_name)
             out_scores = gather_tensors(outputs_ood)
             out_scores = np.concatenate(out_scores, axis=0)
-            # np.save('patchsim_{}.npy'.format(ood_name), out_scores)
             if os.environ['LOCAL_RANK'] == '0':
                 print("Average OOD {} score:".format(ood_name), out_scores.mean())
-            # out_scores_list.append(out_scores)
             if os.environ['LOCAL_RANK'] == '0':
                 auroc, aupr_in, aupr_out, fpr95 = evaluate_all(in_scores, out_scores)
                 result_list.extend([auroc, aupr_in, aupr_out, fpr95])
@@ -189,19 +181,7 @@ def main():
                 logger.critical('AUPR (Out): {}'.format(aupr_out))
                 logger.critical('FPR95: {}'.format(fpr95))
                 logger.critical('quick data: {},{},{},{}'.format(auroc, aupr_in, aupr_out, fpr95))
-                if 3 not in type_id:
-                    type_list = ['Head', 'Mid', 'Tail']
-                    ood_id_prop = len(out_scores) / len(in_scores)
-                    for i in range(len(type_list)):
-                        in_scores_ = in_scores[type_id == i]
-                        out_scores_ = out_scores[:int(len(in_scores_)*ood_id_prop)]
-                        auroc, aupr_in, aupr_out, fpr95 = evaluate_all(in_scores_, out_scores_)
-                        logger.critical('============{} Results for {}============'.format(type_list[i], ood_name))
-                        logger.critical('AUROC: {}'.format(auroc))
-                        logger.critical('AUPR (In): {}'.format(aupr_in))
-                        logger.critical('AUPR (Out): {}'.format(aupr_out))
-                        logger.critical('FPR95: {}'.format(fpr95))
-                        logger.critical('quick data: {},{},{},{}'.format(auroc, aupr_in, aupr_out, fpr95))
+               
         avg_auroc = 0
         avg_fpr95 = 0
         if os.environ['LOCAL_RANK'] == '0':
