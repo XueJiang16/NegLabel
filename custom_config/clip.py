@@ -1,3 +1,4 @@
+readable_name = 'NegLabel_CLIPb16'
 model = dict(
     type='ScalableClassifier',
     t=1,  ## Note: t = 1 means temperature is set to 0.01. See mmcls/models/classifiers/multi_modal.py L.188. 
