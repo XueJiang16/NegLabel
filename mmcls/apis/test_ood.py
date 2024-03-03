@@ -38,7 +38,6 @@ def single_gpu_test_ood(model,
     """
     model.eval()
     results = []
-    class_types = []
     dataset = data_loader.dataset
     rank, world_size = get_dist_info()
     if rank == 0:
@@ -49,14 +48,11 @@ def single_gpu_test_ood(model,
         dist.barrier()
     for i, data in enumerate(data_loader):
         data['dataset_name'] = name
-        result, class_type = model.forward(**data)
+        result = model.forward(**data)
         if len(result.shape) == 0:  # handle the situation of batch = 1
             result = result.unsqueeze(0)
-        if len(class_type.shape) == 0:  # handle the situation of batch = 1
-            class_type = class_type.unsqueeze(0)
         results.append(result)
         # results.append(result.unsqueeze(0))  #############
-        class_types.append(class_type)
         if rank == 0:
             batch_size = data['img'].size(0)
             prog += batch_size * world_size
@@ -76,8 +72,7 @@ def single_gpu_test_ood(model,
     # print(results.cpu().tolist())
     # time.sleep(10)
     # assert False
-    class_types = torch.cat(class_types).cpu().numpy()
-    return results, class_types
+    return results
 
 def ssim_test(img, img_metas=None, **kwargs):
     crop_size = 120
@@ -85,23 +80,6 @@ def ssim_test(img, img_metas=None, **kwargs):
     crops = []
     crops_mean = []
     crops_std = []
-    # img = img.permute(0, 2, 3, 1).contiguous()
-    # for i in range(10):
-    #     crop_x = random.randint(0, 480-crop_size)
-    #     crop_y = random.randint(0, 480-crop_size)
-    #     crop = img[crop_x:crop_x+crop_size, crop_y:crop_y+crop_size, :]
-    #     crops.append(crop)
-    # ssim_crops = 0
-    # for i in range(0,10,2):
-    #     # psnr_temp = psnr(crops[i], crops[i+1], data_range=img.max() - img.min())
-    #     # ssim_crops += psnr_temp if not np.isinf(psnr_temp) else 100
-    #     # ssim_crops += ssim(crops[i], crops[i+1], data_range=img.max() - img.min(), channel_axis=2)
-    #     # mean_bias = np.abs(crops[i].mean(axis=2) - crops[i+1].mean(axis=2)).sum()
-    #     mean_bias = np.abs(crops[i].mean() - crops[i+1].mean())
-    #     std_bias = np.abs(crops[i].std() - crops[i+1].std())
-    #     ssim_crops += (mean_bias + 3*std_bias)
-    #     # ssim_crops += std_bias
-    # ssim_crops /= 5
     corner_list = []
     for h in range(img_size//crop_size):
         for w in range(img_size//crop_size):
@@ -218,15 +196,5 @@ def single_gpu_test_ood_score(model,
         dist.barrier()
     if rank == 0:
         x = np.arange(1, 11, 1)
-        # cat_scores = torch.cat(cat_scores).mean(dim=0).cpu().numpy()
-        # plt.figure(figsize=(8, 8))
-        # cat_scores = torch.cat(cat_scores).cpu().numpy()
-        # mean = cat_scores.mean(axis=0)
-        # std = cat_scores.std(axis=0)
-        # plt.errorbar(x, mean, yerr=std, fmt='o')
-        # plt.plot(x, cat_scores)
-        # plt.ylim([0, 0.3])
-        # plt.savefig("{}_score.jpg".format(name))
-        # plt.close()
     results = torch.cat(results).cpu().numpy()
     return results, results
