@@ -1,7 +1,7 @@
 # Negative Label Guided OOD Detection with Pretrained Vision-Language Models
 
 
-Official PyTorch implementation of the ICLR 2024 paper:
+Official PyTorch implementation of the ICLR 2024 (Spotlight) paper:
 
 **[Negative Label Guided OOD Detection with Pretrained Vision-Language Models](https://openreview.net/forum?id=xUO1HXz4an)**
 
@@ -44,6 +44,9 @@ Following [MOS](https://arxiv.org/pdf/2105.01879.pdf), we use the following 4 OO
 
 Please refer to [MOS](https://github.com/deeplearning-wisc/large_scale_ood), download OOD datasets and put them into `./data/ood_data/`.
 
+## About Negative Labels
+
+We provide the wordnet database in `./txtfiles`. We dynamically calculate and select negative labels based on the given ID labels and the database before the inference stage. We do not directly provide txt files for the selected negative labels. For details, please refer to  `./mmcls/models/classifiers/multi_modal.py/#L140`. 
 
 ## OOD Detection Evaluation
 
