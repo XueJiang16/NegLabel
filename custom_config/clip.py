@@ -1,12 +1,13 @@
 model = dict(
     type='ScalableClassifier',
-    t=1,
+    t=1,  ## Note: t = 1 means temperature is set to 0.01. See mmcls/models/classifiers/multi_modal.py L.188. 
     ngroup=100,
     classifier=dict(
         type='CLIPScalableClassifier',
         arch='ViT-B/16',
         train_dataset='imagenet',
         wordnet_database='./txtfiles/',
+        # wordnet_database='./txtfiles_gt/',  ## OOD labels as negative label. ref: https://openreview.net/forum?id=xUO1HXz4an&noteId=UYGGqnkaSp
         neg_topk=0.15, # percentage 15% -> 10000
         emb_batchsize=1000,
         prompt_idx_pos=85, #[0,80]

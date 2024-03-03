@@ -190,6 +190,3 @@ class CLIPScalableClassifier(BaseClassifier):
                 pos_sim = self.ft_head(image_features)
             neg_sim = (100.0 * image_features @ self.text_features_neg.T)
             return pos_sim, neg_sim
-
-
-f
