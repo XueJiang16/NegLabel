@@ -159,6 +159,13 @@ class CLIPScalableClassifier(BaseClassifier):
 
             self.adj_start_idx = int(len(ind_noun) * neg_topk)
 
+            ## If you want to dump the selected negative labels (with prompt), please uncomment these lines.
+            # with open("selected_neg_labels.txt", "w") as f:
+            #     for i in ind_noun[0:int(len(ind_noun)*neg_topk)]:
+            #         f.write("{}\n".format(words_noun[i]))
+            #     for j in ind_adj[0:int(len(ind_adj)*neg_topk)]:
+            #         f.write("{}\n".format(words_adj[j]))
+    
     def extract_feat(self, img, stage='neck'):
         raise NotImplementedError
 
