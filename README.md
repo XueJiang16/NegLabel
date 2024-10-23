@@ -62,10 +62,12 @@ bash ./run.sh
 
 
 ```
-@inproceedings{jiang2024neglabel,
-  title={Negative Label Guided OOD Detection with Pretrained Vision-Language Models},
+@inproceedings{
+jiang2024negative,
+title={Negative Label Guided {OOD} Detection with Pretrained Vision-Language Models},
 author={Xue Jiang and Feng Liu and Zhen Fang and Hong Chen and Tongliang Liu and Feng Zheng and Bo Han},
-  booktitle = {International Conference on Learning Representations (ICLR)},
-  year={2024}
+booktitle={The Twelfth International Conference on Learning Representations},
+year={2024},
+url={https://openreview.net/forum?id=xUO1HXz4an}
 }
 ```
